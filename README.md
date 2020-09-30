@@ -1,5 +1,3 @@
-
-=======
 # Album Meum
 -----
 #### A Custom List
