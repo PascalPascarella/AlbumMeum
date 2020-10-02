@@ -6,7 +6,8 @@ namespace AlbumMeum
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Album<int> customList1 = new Album<int>();
+			customList1.Add(101);
 		}
 	}
 }
