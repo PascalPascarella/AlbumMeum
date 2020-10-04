@@ -35,7 +35,7 @@ namespace AlbumMeum
 					return _items[index];
 				}
 
-				throw new ArgumentOutOfRangeException();
+				throw new ArgumentOutOfRangeException($"{index} is out of Album Range.");
 			}
 
 			set
@@ -46,7 +46,7 @@ namespace AlbumMeum
 				}
 				else
 				{
-					throw new ArgumentOutOfRangeException();
+					throw new ArgumentOutOfRangeException($"{index} is out of Album Range.");
 				}
 			}
 		}
@@ -58,7 +58,9 @@ namespace AlbumMeum
 			count++;		// Increase count by one to fill in empty array positions in sequence
 			if(count >= capacity)
 			{
-				_items = new T[capacity *= 2];		// Ensures empty array positions by doubling available size of array when adding multiple (item)
+
+				T[] _itemsNew =  new T[capacity *= 2];    // Ensures empty array positions by doubling available size of array when adding multiple (item)
+				_items = _items.Concat(_itemsNew).ToArray();		// Appends empty array positions to end current array
 			}
 		}
 		// -->Remove Method
